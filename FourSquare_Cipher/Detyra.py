@@ -14,7 +14,7 @@ def getData(): 	#get data from user
 
 #Funksioni "getData()" merr hyrjen nga perdoruesi dhe ben nje "loop" per te kaluar neper secilen shkronje dhe
 # hequr shkronjat tjera pervec atyre te alfabetit. Funksioni kthen nje string pa shkronja tjera pervec atyre te alfabetit.
-#Une jam Rinesa
+
 
 def makeMatrix(key): #creates a char array to be used as a matrix
 
