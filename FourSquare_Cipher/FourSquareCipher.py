@@ -180,24 +180,24 @@ def decrypt(message , key1, key2):
 
 def main():
 
-    print ("****** Four Square Cipher *******\n")
+    print("****** Four Square Cipher *******\n")
 
-    print ("Enter Key 1: ", end=' ')
+    print("Enter Key 1: ", end=' ')
     key1 = getData()
 
 
-    print ("\nEnter Key 2: ", end=' ')
+    print("\nEnter Key 2: ", end=' ')
     key2 = getData()
 
-    print ("\nEnter the message to encrypt (only A-Z):", end=' ')
+    print("\nEnter the message to encrypt (only A-Z):", end=' ')
     message = getData()
 
-    enCr = encrypt ( message, key1 , key2)
+    enCr = encrypt( message, key1 , key2)
 
-    print ("\nEncrypted message: ")
+    print("\nEncrypted message: ")
     print (enCr)
 
-    print ("\n\nDecrypted message: ")
+    print("\n\nDecrypted message: ")
     deCr = decrypt ( enCr, key1 , key2)
     print (deCr)
 
