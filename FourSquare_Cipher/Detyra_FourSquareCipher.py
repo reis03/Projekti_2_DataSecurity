@@ -126,3 +126,44 @@ def encrypt(message , key1, key2):
     #encrypted.append(set)
 
     return ''.join(set)
+
+
+
+
+def main():
+
+    print ("****** Four Square Cipher *******\n")
+
+    print ("\033[1m" + "Enter Key 1: "+ "\033[0m" , end=' ')
+    key1 = getData()
+
+
+    print ("\033[1m" + "\nEnter Key 2: " + "\033[0m" , end=' ')
+    key2 = getData()
+
+    print ("\033[1m" + "\nEnter the message to encrypt (only A-Z):" + "\033[0m" , end=' ')
+    message = getData()
+
+    enCr = encrypt ( message, key1 , key2)
+
+
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print ("\033[1m"+"Encrypted message:" + "\033[0m")   #\033[1m --> bene tekstin bold.
+    print (enCr)
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    if len(message)%2 == 1:
+        print("\033[33m"+ "Number of characters in your input is odd and the last letter will be changed. "+ "\033[0m")
+    else :
+        print("\033[32m"+"Number of characters in your input is not odd and it will be successfully decrypted. "+ "\033[0m")
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print ("\033[1m" + "Decrypted message: " + "\033[0m")
+    deCr = decrypt ( enCr, key1 , key2)
+    print (deCr)
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+if __name__ == "__main__":
+    main()

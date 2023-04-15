@@ -205,9 +205,9 @@ def main():
 
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     if len(message)%2 == 1:
-         print("\033[1m"+ "Number of characters in your input is odd and the last letter will be changed. "+ "\033[0m")
+         print("\033[33m"+ "Number of characters in your input is odd and the last letter will be changed. "+ "\033[0m")
     else :
-         print("\033[1m"+"Number of characters in your input is not odd and it will be successfully decrypted. "+ "\033[0m")
+         print("\033[32m"+"Number of characters in your input is not odd and it will be successfully decrypted. "+ "\033[0m")
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
