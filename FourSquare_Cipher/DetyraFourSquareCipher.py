@@ -78,6 +78,53 @@ def search (ref, letter):
     pass
 
 
+def encrypt(message , key1, key2):
+
+
+    key1 = removeDuplicates(key1)
+    matrix1 = makeMatrix(key1)
+
+
+    key2 = removeDuplicates(key2)
+    matrix2 = makeMatrix(key2)
+
+    refMatrix = makeMatrix('!')
+
+    print ("\033[1m" + "\n~~~~~Key 1 Block~~~~~" +"\033[0m")
+    printMatrix(matrix1)
+    print ("\033[1m"+ "~~~~~Key 2 Block~~~~~" + "\033[0m")
+    printMatrix(matrix2)
+    print ("\033[1m"+"~~~~~Reference block~~~~~" + "\033[0m")
+    printMatrix(refMatrix)
+
+    encrypted = []
+    counter = 0
+
+    set = []
+
+    while (counter < len(message)):
+
+        aPosition = search(refMatrix, message[counter])
+        if counter != len(message)-1:
+            bPosition = search(refMatrix, message[counter + 1])
+        if message[counter] != 'Z':
+            set.append(matrix1[evaluate(aPosition,bPosition)])
+        else:
+            set.append('Z')
+
+        if counter == len(message) - 1:
+            return ''.join(set)
+        elif message[counter] != 'Z':
+            set.append(matrix2[evaluate(bPosition,aPosition)])
+        #set.append(matrix1[evaluate(search(refMatrix,message[counter+1]),search(refMatrix,message[counter]))])
+        else:
+            set.append('Z')
+
+        counter += 2
+    #encrypted.append(set)
+
+    return ''.join(set)
+
 
 
 def main():
