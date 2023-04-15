@@ -1,7 +1,9 @@
 
-alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y'] #letter Z ommited
+alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y']
+#letter Z ommited
 
-def getData(): 	#get data from user
+#get data from user
+def getData():
 
     dataInput = input()
 
@@ -124,6 +126,7 @@ def encrypt(message , key1, key2):
     #encrypted.append(set)
 
     return ''.join(set)
+
 
 
 
