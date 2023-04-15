@@ -128,6 +128,58 @@ def encrypt(message , key1, key2):
     return ''.join(set)
 
 
+# DECRYPTION function
+#NOTE need to add a case when message last position is even to append original character
+def decrypt(message , key1, key2):
+
+
+    key1 = removeDuplicates(key1)
+    matrix1 = makeMatrix(key1)
+
+
+    key2 = removeDuplicates(key2)
+    matrix2 = makeMatrix(key2)
+
+    refMatrix = makeMatrix('!')
+
+    #print ("*****Key 1 Block*****")
+    #printMatrix(matrix1)
+    #print ("*****Key 2 Block****")
+    #printMatrix(matrix2)
+    #print ("****Reference block*****")
+    #printMatrix(refMatrix)
+
+    #encrypted = []
+    counter = 0
+
+    set = []
+
+    while (counter < len(message)):
+
+        aPosition = search(matrix1, message[counter])
+        if counter != len(message)-1:
+            bPosition = search(matrix2, message[counter + 1])
+
+        if message[counter] != 'Z':
+            set.append(refMatrix[evaluate(aPosition,bPosition)])
+        else:
+            set.append('Z')
+
+
+        if counter == len(message) - 1:
+            return ''.join(set)
+        elif message[counter] != 'Z':
+            set.append(refMatrix[evaluate(bPosition,aPosition)])
+        #set.append(matrix1[evaluate(search(refMatrix,message[counter+1]),search(refMatrix,message[counter]))])
+        else:
+            set.append('Z')
+
+        counter += 2
+    #encrypted.append(set)
+
+    return ''.join(set)
+
+
 
 
 def main():
