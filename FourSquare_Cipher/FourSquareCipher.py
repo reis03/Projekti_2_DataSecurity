@@ -42,7 +42,7 @@ def printMatrix(matrix): #prints the char array as a matrix
     for x in range(5):
         print("\n")
         for y in range(5):
-            print (matrix[counter], end=' ')
+            print (matrix[counter], end=' ')  # end='' --> vetem rregullim i paraqitjes ne menyre horizontale
             counter += 1
     print("\n\n")
 
@@ -90,11 +90,11 @@ def encrypt(message , key1, key2):
 
     refMatrix = makeMatrix('!')
 
-    print ("*****Key 1 Block*****")
+    print ("\033[1m" + "\n~~~~~Key 1 Block~~~~~" +"\033[0m")
     printMatrix(matrix1)
-    print ("*****Key 2 Block****")
+    print ("\033[1m"+ "~~~~~Key 2 Block~~~~~" + "\033[0m")
     printMatrix(matrix2)
-    print ("****Reference block*****")
+    print ("\033[1m"+"~~~~~Reference block~~~~~" + "\033[0m")
     printMatrix(refMatrix)
 
     encrypted = []
@@ -180,26 +180,31 @@ def decrypt(message , key1, key2):
 
 def main():
 
-    print("****** Four Square Cipher *******\n")
+    print ("****** Four Square Cipher *******\n")
 
-    print("Enter Key 1: ", end=' ')
+    print ("\033[1m" + "Enter Key 1: "+ "\033[0m" , end=' ')
     key1 = getData()
 
 
-    print("\nEnter Key 2: ", end=' ')
+    print ("\033[1m" + "\nEnter Key 2: " + "\033[0m" , end=' ')
     key2 = getData()
 
-    print("\nEnter the message to encrypt (only A-Z):", end=' ')
+    print ("\033[1m" + "\nEnter the message to encrypt (only A-Z):" + "\033[0m" , end=' ')
     message = getData()
 
-    enCr = encrypt( message, key1 , key2)
+    enCr = encrypt ( message, key1 , key2)
 
-    print("\nEncrypted message: ")
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print ("\033[1m"+"Encrypted message:" + "\033[0m")   #\033[1m --> bene tekstin bold.
     print (enCr)
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
-    print("\n\nDecrypted message: ")
+
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print ("\033[1m" + "Decrypted message: " + "\033[0m")
     deCr = decrypt ( enCr, key1 , key2)
     print (deCr)
+    print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 if __name__ == "__main__":
     main()
