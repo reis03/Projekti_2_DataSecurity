@@ -1,7 +1,7 @@
 alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y']
-#letter Z ommited
+#shkronja Z eshte hequr
 
-#get data from user
+#merr te dhenat nga perdoruesi
 def getData():
 
     dataInput = input()
@@ -13,7 +13,7 @@ def getData():
             data.append(char)
     return ''.join(data)
 
-def makeMatrix(key): #creates a char array to be used as a matrix
+def makeMatrix(key): #krijon nje char array per tu perdorur si matrice
 
     matrix = []
     counter = 0
@@ -37,7 +37,7 @@ def makeMatrix(key): #creates a char array to be used as a matrix
     return ''.join(matrix)
 
 
-def printMatrix(matrix): #prints the char array as a matrix
+def printMatrix(matrix): #printon char array si nje matrice
 
     counter = 0
     for x in range(5):
@@ -49,7 +49,7 @@ def printMatrix(matrix): #prints the char array as a matrix
 
 
 
-def removeDuplicates(str): #removes duplicates from keys
+def removeDuplicates(str): #heq duplikatet nga celsat
     result=[]
     seen=set()
     for char in str:
@@ -59,16 +59,13 @@ def removeDuplicates(str): #removes duplicates from keys
     return ''.join(result)
 
 
-
-#evaluate function: used to determine which index position on the
-#    mirror matrix the key is located
+#evaluate funksioni: perdoret per te percaktuar se cili pozicion i indeksit
+# ne matricen e pasqyres celesi ndodhet
 def evaluate(ref1, ref2):
     return ((int(ref1 / 5) * 5) + (ref2 % 5))
 
 
-
-
-#searches for the position index of the message letter in the ref matrix
+#kerkon per pozicionin e indeksit te letres se mesazhit ne matricen ref
 def search (ref, letter):
     counter = 0
     if letter == 'Z':
@@ -128,8 +125,8 @@ def encrypt(message , key1, key2):
     return ''.join(set)
 
 
-# DECRYPTION function
-#NOTE need to add a case when message last position is even to append original character
+# Funksioni i dekriptimit
+#NOTE: duhet të shtoni një rast kur pozicioni i fundit i mesazhit është për të shtuar karakterin origjinal
 def decrypt(message , key1, key2):
 
 
